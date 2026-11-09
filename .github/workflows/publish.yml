@@ -7,11 +7,12 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-on:
-  release:
-    types:
-      - published
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   release:
+#     types:
+#       - published
+# 
 jobs:
   publish:
     runs-on: ubuntu-latest

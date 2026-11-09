@@ -7,16 +7,17 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - 'master'
-      - 'releases/v*'
-    tags:
-      - 'v*'
-  pull_request:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+#   push:
+#     branches:
+#       - 'master'
+#       - 'releases/v*'
+#     tags:
+#       - 'v*'
+#   pull_request:
+# 
 jobs:
   zizmor:
     uses: crazy-max/.github/.github/workflows/zizmor.yml@f91220cba053bd54299ba645a599ee8ed436f222 # v1.11.0

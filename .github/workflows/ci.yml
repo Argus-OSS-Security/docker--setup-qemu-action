@@ -7,18 +7,19 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 10 * * *'
-  push:
-    branches:
-      - 'master'
-      - 'releases/v*'
-    tags:
-      - 'v*'
-  pull_request:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+#   schedule:
+#     - cron: '0 10 * * *'
+#   push:
+#     branches:
+#       - 'master'
+#       - 'releases/v*'
+#     tags:
+#       - 'v*'
+#   pull_request:
+# 
 jobs:
   default:
     runs-on: ubuntu-latest

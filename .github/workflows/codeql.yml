@@ -3,13 +3,14 @@ name: codeql
 permissions:
   contents: read
 
-on:
-  push:
-    branches:
-      - 'master'
-      - 'releases/v*'
-  pull_request:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches:
+#       - 'master'
+#       - 'releases/v*'
+#   pull_request:
+# 
 env:
   NODE_VERSION: "24"
 
